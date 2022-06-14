@@ -8,7 +8,6 @@ public class Mesa {
     float valor;
     boolean creada;
     String camarero;
-
     DefaultListModel lista;
     public Mesa() {
     }

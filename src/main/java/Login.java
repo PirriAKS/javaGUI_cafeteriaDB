@@ -24,16 +24,6 @@ public class Login extends JFrame {
     protected static final String PASS="";
     protected static Connection con;
     protected static Mesas m;
-    protected static boolean reserva1=false;
-    protected static boolean reserva2=false;
-    protected static boolean reserva3=false;
-    protected static boolean reserva4=false;
-    protected static boolean reserva5=false;
-    protected static boolean reserva6=false;
-    protected static boolean reserva7=false;
-    protected static boolean reserva8=false;
-    protected static boolean reserva9=false;
-    protected static boolean reserva10=false;
 
     public Login() {
         button_login.addActionListener(new ActionListener() {
@@ -47,7 +37,6 @@ public class Login extends JFrame {
             }
         });
     }
-
     public static void main(String[] args) {
         try {
             init();
