@@ -34,22 +34,23 @@ public class App extends JFrame {
     private JLabel label_mesa;
     private static int[] codigo_productos;
     protected static Mesa mesa;
+    protected static Mesas m;
 
     public App() {
         agregarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Producto p = (Producto) list_productos.getSelectedValue();
-                mesa.valor=mesa.valor+p.getPrecio();
-                mesa.lista.addElement(p);
+                Bebida b = (Bebida) list_productos.getSelectedValue();
+                mesa.valor=mesa.valor+b.getPrecio();
+                mesa.lista.addElement(b);
                 a.text_preciototal.setText(String.valueOf(mesa.getValor()));
             }
         });
         button_eliminar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Producto p = (Producto) list_ticket.getSelectedValue();
-                mesa.valor=mesa.valor-p.precio;
+                Bebida b = (Bebida) list_ticket.getSelectedValue();
+                mesa.valor=mesa.valor-b.getPrecio();
                 mesa.lista.remove(list_ticket.getSelectedIndex());
                 a.text_preciototal.setText(String.valueOf(mesa.getValor()));
                 a.button_eliminar.setEnabled(false);
@@ -58,7 +59,12 @@ public class App extends JFrame {
         button_generar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 crearTicket(generarTicket());
+                m.cancelarMesa(mesa.getNumero());
+                JOptionPane.showMessageDialog(container,"Ticket creado");
+                a.dispose();
+                m.cerrarVentana();
             }
         });
         list_productos.addListSelectionListener(new ListSelectionListener() {
@@ -103,8 +109,8 @@ public class App extends JFrame {
             ResultSet rs;
             rs = st.executeQuery("SELECT * FROM productos");
             while (rs.next()) {
-                Producto p = new Producto(rs.getByte(1), rs.getString(2), rs.getFloat(3));
-                a.productos_buscar.addElement(p);
+                Bebida b = new Bebida(rs.getByte(1), rs.getString(2), rs.getFloat(3));
+                a.productos_buscar.addElement(b);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -113,7 +119,7 @@ public class App extends JFrame {
     protected static Factura generarTicket() {
         codigo_productos = new int[mesa.lista.size()];
         for (int i = 0; i < mesa.lista.size(); i++) {
-            Producto p_ticket = (Producto) mesa.lista.get(i);
+            Bebida p_ticket = (Bebida) mesa.lista.get(i);
             codigo_productos[i] = p_ticket.getCodigo();
         }
         Factura ticket = new Factura(log.u.getCodigo(), Arrays.toString(codigo_productos), a.text_num_mesa.getText(), LocalDateTime.now(), a.text_preciototal.getText());
@@ -133,5 +139,4 @@ public class App extends JFrame {
             throw new RuntimeException(e);
         }
     }
-
 }

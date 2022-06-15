@@ -24,115 +24,185 @@ public class Mesas extends JFrame {
     protected static App a;
     protected static Login log;
     protected static int num_mesa;
-    protected static ArrayList lista_mesas=new ArrayList<Mesa>();
-    protected static boolean reserva1=false;
-    protected static boolean reserva2=false;
-    protected static boolean reserva3=false;
-    protected static boolean reserva4=false;
-    protected static boolean reserva5=false;
-    protected static boolean reserva6=false;
-    protected static boolean reserva7=false;
-    protected static boolean reserva8=false;
-    protected static boolean reserva9=false;
-    protected static boolean reserva10=false;
 
     public Mesas() {
         mesa1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                num_mesa=1;
-                accederTicket(num_mesa);
+                num_mesa = 1;
+                if (!log.mesa1.isCreada()) {
+                    log.mesa1.setCreada(true);
+                    log.mesa1.setCamarero(log.u.getNombre());
+                    log.mesa1.setNumero(1);
+                    log.mesa1.setLista(null);
+                    a.init(log.mesa1, false);
+                } else {
+                    a.init(log.mesa1, true);
+                }
+                //accederMesa(num_mesa);
                 mesa1Button.setBackground(Color.YELLOW);
-                reserva1=true;
             }
         });
         mesa2Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 num_mesa = 2;
-                accederTicket(num_mesa);
+                if (!log.mesa2.isCreada()) {
+                    log.mesa2.setCreada(true);
+                    log.mesa2.setCamarero(log.u.getNombre());
+                    log.mesa2.setNumero(2);
+                    log.mesa2.setLista(null);
+                    a.init(log.mesa2, false);
+                } else {
+                    a.init(log.mesa2, true);
+                }
+                //accederMesa(num_mesa);
                 mesa2Button.setBackground(Color.YELLOW);
-                reserva2=true;
             }
         });
         mesa3Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 num_mesa = 3;
-                accederTicket(num_mesa);
+                if (!log.mesa3.isCreada()) {
+                    log.mesa3.setCreada(true);
+                    log.mesa3.setCamarero(log.u.getNombre());
+                    log.mesa3.setNumero(3);
+                    log.mesa3.setLista(null);
+                    a.init(log.mesa3, false);
+                } else {
+                    a.init(log.mesa3, true);
+                }
+                //accederMesa(num_mesa);
                 mesa3Button.setBackground(Color.YELLOW);
-                reserva3=true;
             }
         });
         mesa4Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 num_mesa = 4;
-                accederTicket(num_mesa);
+                if (!log.mesa4.isCreada()) {
+                    log.mesa4.setCreada(true);
+                    log.mesa4.setCamarero(log.u.getNombre());
+                    log.mesa4.setNumero(4);
+                    log.mesa4.setLista(null);
+                    a.init(log.mesa4, false);
+                } else {
+                    a.init(log.mesa4, true);
+                }
+                //accederMesa(num_mesa);
                 mesa4Button.setBackground(Color.YELLOW);
-                reserva4=true;
             }
         });
         mesa5Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 num_mesa = 5;
-                accederTicket(num_mesa);
+                if (!log.mesa5.isCreada()) {
+                    log.mesa5.setCreada(true);
+                    log.mesa5.setCamarero(log.u.getNombre());
+                    log.mesa5.setNumero(5);
+                    log.mesa5.setLista(null);
+                    a.init(log.mesa5, false);
+                } else {
+                    a.init(log.mesa5, true);
+                }
+                //accederMesa(num_mesa);
                 mesa5Button.setBackground(Color.YELLOW);
-                reserva5=true;
             }
         });
         mesa6Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 num_mesa = 6;
-                accederTicket(num_mesa);
+                if (!log.mesa6.isCreada()) {
+                    log.mesa6.setCreada(true);
+                    log.mesa6.setCamarero(log.u.getNombre());
+                    log.mesa6.setNumero(6);
+                    log.mesa6.setLista(null);
+                    a.init(log.mesa6, false);
+                } else {
+                    a.init(log.mesa6, true);
+                }
+                //accederMesa(num_mesa);
                 mesa6Button.setBackground(Color.YELLOW);
-                reserva6=true;
             }
         });
         mesa7Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 num_mesa = 7;
-                accederTicket(num_mesa);
+                if (!log.mesa7.isCreada()) {
+                    log.mesa7.setCreada(true);
+                    log.mesa7.setCamarero(log.u.getNombre());
+                    log.mesa7.setNumero(7);
+                    log.mesa7.setLista(null);
+                    a.init(log.mesa7, false);
+                } else {
+                    a.init(log.mesa7, true);
+                }
+                //accederMesa(num_mesa);
                 mesa7Button.setBackground(Color.YELLOW);
-                reserva7=true;
             }
         });
         mesa8Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 num_mesa = 8;
-                accederTicket(num_mesa);
+                if (!log.mesa8.isCreada()) {
+                    log.mesa8.setCreada(true);
+                    log.mesa8.setCamarero(log.u.getNombre());
+                    log.mesa8.setNumero(8);
+                    log.mesa8.setLista(null);
+                    a.init(log.mesa8, false);
+                } else {
+                    a.init(log.mesa8, true);
+                }
+                //accederMesa(num_mesa);
                 mesa8Button.setBackground(Color.YELLOW);
-                reserva8=true;
             }
         });
         mesa9Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 num_mesa = 9;
-                accederTicket(num_mesa);
+                if (!log.mesa9.isCreada()) {
+                    log.mesa9.setCreada(true);
+                    log.mesa9.setCamarero(log.u.getNombre());
+                    log.mesa9.setNumero(9);
+                    log.mesa9.setLista(null);
+                    a.init(log.mesa9, false);
+                } else {
+                    a.init(log.mesa9, true);
+                }
+                //accederMesa(num_mesa);
                 mesa9Button.setBackground(Color.YELLOW);
-                reserva9=true;
             }
         });
         mesa10Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 num_mesa = 10;
-                accederTicket(num_mesa);
+                if (!log.mesa10.isCreada()) {
+                    log.mesa10 = new Mesa();
+                    log.mesa10.setCreada(true);
+                    log.mesa10.setCamarero(log.u.getNombre());
+                    log.mesa10.setNumero(10);
+                    log.mesa10.setLista(null);
+                    a.init(log.mesa10, false);
+                } else {
+                    a.init(log.mesa10, true);
+                }
+                //accederMesa(num_mesa);
                 mesa10Button.setBackground(Color.YELLOW);
-                reserva10=true;
             }
         });
         cancelarTicketButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cancelarTicket(num_mesa);
-                num_mesa = 0;
-            }
+               @Override
+               public void actionPerformed(ActionEvent e) {
+                     cancelarMesa(num_mesa);
+                     num_mesa = 0;
+               }
         });
     }
     protected static void init() {
@@ -140,102 +210,86 @@ public class Mesas extends JFrame {
         m.setContentPane(m.container);
         m.setVisible(true);
         m.pack();
-        if(reserva1==true){
-            m.mesa1Button.setBackground(Color.YELLOW);
-        }else if(reserva2==true){
-            m.mesa2Button.setBackground(Color.YELLOW);
-        }else if(reserva3==true){
-            m.mesa3Button.setBackground(Color.YELLOW);
-        }else if(reserva4==true){
-            m.mesa4Button.setBackground(Color.YELLOW);
-        }else if(reserva5==true){
-            m.mesa5Button.setBackground(Color.YELLOW);
-        }else if(reserva6==true){
-            m.mesa6Button.setBackground(Color.YELLOW);
-        }else if(reserva7==true){
-            m.mesa7Button.setBackground(Color.YELLOW);
-        }else if(reserva8==true){
-            m.mesa8Button.setBackground(Color.YELLOW);
-        }else if(reserva9==true){
-            m.mesa9Button.setBackground(Color.YELLOW);
-        }else if(reserva10==true){
-            m.mesa10Button.setBackground(Color.YELLOW);
-        }
+        pinta();
         m.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
-    protected static void accederTicket(int num_mesa){
-        if(lista_mesas.size()==0){
-            crearTicket(num_mesa);
-        }else{
-            boolean flag=false;
-            for (int i = 0; i < lista_mesas.size(); i++) {
-                Mesa mesa= (Mesa) lista_mesas.get(i);
-                if(mesa.getNumero()==num_mesa){
-                    flag=true;
-                    a.init(mesa,true);
-                    i= lista_mesas.size();
-                }else{
-                    flag=false;
-                }
-            }
-            if(!flag){
-                crearTicket(num_mesa);
-            }
+    protected static void pinta() {
+        if (log.mesa1.isCreada()) {
+            m.mesa1Button.setBackground(Color.YELLOW);
+        }
+        if (log.mesa2.isCreada()) {
+            m.mesa2Button.setBackground(Color.YELLOW);
+        }
+        if (log.mesa3.isCreada()) {
+            m.mesa3Button.setBackground(Color.YELLOW);
+        }
+        if (log.mesa4.isCreada()) {
+            m.mesa4Button.setBackground(Color.YELLOW);
+        }
+        if (log.mesa5.isCreada()) {
+            m.mesa5Button.setBackground(Color.YELLOW);
+        }
+        if (log.mesa6.isCreada()) {
+            m.mesa6Button.setBackground(Color.YELLOW);
+        }
+        if (log.mesa7.isCreada()) {
+            m.mesa7Button.setBackground(Color.YELLOW);
+        }
+        if (log.mesa8.isCreada()) {
+            m.mesa8Button.setBackground(Color.YELLOW);
+        }
+        if (log.mesa9.isCreada()) {
+            m.mesa9Button.setBackground(Color.YELLOW);
+        }
+        if (log.mesa10.isCreada()) {
+            m.mesa10Button.setBackground(Color.YELLOW);
         }
     }
-    protected static void crearTicket(int num_mesa){
-        Mesa mesa=new Mesa(num_mesa,0.0f,false,log.u.getNombre(),null);
-        lista_mesas.add(mesa);
-        a.init(mesa,false);
-    }
-    protected static void cancelarTicket(int num_mesa){
-        switch (num_mesa){
+    protected static void cancelarMesa(int num_mesa) {
+        switch (num_mesa) {
             case 1:
+                log.mesa1=new Mesa();
                 m.mesa1Button.setBackground(Color.GREEN);
-                reserva1=false;
                 break;
             case 2:
+                log.mesa2=new Mesa();
                 m.mesa2Button.setBackground(Color.GREEN);
-                reserva2=false;
                 break;
             case 3:
+                log.mesa3=new Mesa();
                 m.mesa3Button.setBackground(Color.GREEN);
-                reserva3=false;
                 break;
             case 4:
+                log.mesa4=new Mesa();
                 m.mesa4Button.setBackground(Color.GREEN);
-                reserva4=false;
                 break;
             case 5:
+                log.mesa5=new Mesa();
                 m.mesa5Button.setBackground(Color.GREEN);
-                reserva5=false;
                 break;
             case 6:
+                log.mesa6=new Mesa();
                 m.mesa6Button.setBackground(Color.GREEN);
-                reserva6=false;
                 break;
             case 7:
+                log.mesa7=new Mesa();
                 m.mesa7Button.setBackground(Color.GREEN);
-                reserva7=false;
                 break;
             case 8:
+                log.mesa8=new Mesa();
                 m.mesa8Button.setBackground(Color.GREEN);
-                reserva8=false;
                 break;
             case 9:
+                log.mesa9=new Mesa();
                 m.mesa9Button.setBackground(Color.GREEN);
-                reserva9=false;
                 break;
             case 10:
+                log.mesa10=new Mesa();
                 m.mesa10Button.setBackground(Color.GREEN);
-                reserva10=false;
                 break;
         }
-        for (int i = 0; i < lista_mesas.size(); i++) {
-            Mesa mesa= (Mesa) lista_mesas.get(i);
-            if(mesa.getNumero()==num_mesa){
-                lista_mesas.remove(mesa);
-            }
-        }
+    }
+    protected static void cerrarVentana() {
+        m.dispose();
     }
 }
