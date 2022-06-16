@@ -6,7 +6,7 @@ import javax.swing.*;
 public class Mesa {
     int numero;
     float valor;
-    boolean creada=false;
+    boolean creada;
     String camarero;
     DefaultListModel lista;
     public Mesa() {

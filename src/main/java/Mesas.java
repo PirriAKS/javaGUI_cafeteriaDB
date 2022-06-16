@@ -33,13 +33,12 @@ public class Mesas extends JFrame {
                 if (!log.mesa1.isCreada()) {
                     log.mesa1.setCreada(true);
                     log.mesa1.setCamarero(log.u.getNombre());
-                    log.mesa1.setNumero(1);
+                    log.mesa1.setNumero(num_mesa);
                     log.mesa1.setLista(null);
                     a.init(log.mesa1, false);
                 } else {
                     a.init(log.mesa1, true);
                 }
-                //accederMesa(num_mesa);
                 mesa1Button.setBackground(Color.YELLOW);
             }
         });
@@ -56,7 +55,6 @@ public class Mesas extends JFrame {
                 } else {
                     a.init(log.mesa2, true);
                 }
-                //accederMesa(num_mesa);
                 mesa2Button.setBackground(Color.YELLOW);
             }
         });
@@ -73,7 +71,6 @@ public class Mesas extends JFrame {
                 } else {
                     a.init(log.mesa3, true);
                 }
-                //accederMesa(num_mesa);
                 mesa3Button.setBackground(Color.YELLOW);
             }
         });
@@ -90,7 +87,6 @@ public class Mesas extends JFrame {
                 } else {
                     a.init(log.mesa4, true);
                 }
-                //accederMesa(num_mesa);
                 mesa4Button.setBackground(Color.YELLOW);
             }
         });
@@ -107,7 +103,6 @@ public class Mesas extends JFrame {
                 } else {
                     a.init(log.mesa5, true);
                 }
-                //accederMesa(num_mesa);
                 mesa5Button.setBackground(Color.YELLOW);
             }
         });
@@ -124,7 +119,6 @@ public class Mesas extends JFrame {
                 } else {
                     a.init(log.mesa6, true);
                 }
-                //accederMesa(num_mesa);
                 mesa6Button.setBackground(Color.YELLOW);
             }
         });
@@ -141,7 +135,6 @@ public class Mesas extends JFrame {
                 } else {
                     a.init(log.mesa7, true);
                 }
-                //accederMesa(num_mesa);
                 mesa7Button.setBackground(Color.YELLOW);
             }
         });
@@ -158,7 +151,6 @@ public class Mesas extends JFrame {
                 } else {
                     a.init(log.mesa8, true);
                 }
-                //accederMesa(num_mesa);
                 mesa8Button.setBackground(Color.YELLOW);
             }
         });
@@ -175,7 +167,6 @@ public class Mesas extends JFrame {
                 } else {
                     a.init(log.mesa9, true);
                 }
-                //accederMesa(num_mesa);
                 mesa9Button.setBackground(Color.YELLOW);
             }
         });
@@ -193,7 +184,6 @@ public class Mesas extends JFrame {
                 } else {
                     a.init(log.mesa10, true);
                 }
-                //accederMesa(num_mesa);
                 mesa10Button.setBackground(Color.YELLOW);
             }
         });
@@ -288,8 +278,5 @@ public class Mesas extends JFrame {
                 m.mesa10Button.setBackground(Color.GREEN);
                 break;
         }
-    }
-    protected static void cerrarVentana() {
-        m.dispose();
     }
 }

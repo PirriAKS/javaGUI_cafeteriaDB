@@ -43,9 +43,12 @@ public class Login extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String pass= String.valueOf(log.passwordField_password.getPassword());
                 String nombre=log.text_user.getText();
-                boolean flag=searchLogin(nombre,pass);
-                if(flag){m.init();}
-                if(!flag){JOptionPane.showMessageDialog(log.container,"error en el login");}
+                try {
+                    if(searchLogin(nombre,pass)){m.init();}
+                    else{JOptionPane.showMessageDialog(log.container,"error en el login");}
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
     }
@@ -69,22 +72,16 @@ public class Login extends JFrame {
         log.setSize(300,300);
         log.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
-    protected static boolean searchLogin(String nombre, String pass){
-        try {
+    protected static boolean searchLogin(String nombre, String pass) throws SQLException {
             Statement st =con.createStatement();
             ResultSet rs;
             rs=st.executeQuery("SELECT * FROM camareros WHERE nombre='"+nombre+"' AND password='"+pass+"'");
             if(rs.next()) {
-                 do{
-                    u = new Usuario(rs.getString(1), rs.getString(2), rs.getString(3));
-                }while (rs.next());
+                u = new Usuario(rs.getString(1), rs.getString(2), rs.getString(3));
                 return true;
             }else{
                 return false;
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
     }
     protected static void cargarMesas() {
         lista_mesas = new ArrayList<Mesa>();

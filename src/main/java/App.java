@@ -17,15 +17,14 @@ import java.util.Arrays;
 public class App extends JFrame {
     protected static App a;
     protected static Login log;
-    protected static DefaultListModel productos_buscar;
     private JPanel container;
     private JPanel izquierda;
     private JPanel derecha;
     private JList list_productos;
-    private JTextField text_buscar;
+    protected static DefaultListModel productos_buscar;
     private JList list_ticket;
+    private JTextField text_buscar;
     private JTextField text_camarero;
-    private JSpinner spinner1;
     private JTextField text_preciototal;
     private JButton button_generar;
     private JButton agregarButton;
@@ -59,12 +58,11 @@ public class App extends JFrame {
         button_generar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
                 crearTicket(generarTicket());
                 m.cancelarMesa(mesa.getNumero());
                 JOptionPane.showMessageDialog(container,"Ticket creado");
+                m.pinta();
                 a.dispose();
-                m.cerrarVentana();
             }
         });
         list_productos.addListSelectionListener(new ListSelectionListener() {
